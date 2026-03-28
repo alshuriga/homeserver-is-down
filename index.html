@@ -1,23 +1,170 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Temporarily Unavailable</title>
-    <style>
-        body { text-align: center; padding: 150px; }
-        h1 { font-size: 50px; }
-        body { font: 20px Monospace; color: #333; }
-        article { display: block; text-align: left; margin: 0 auto; }
-        a { color: #dc8100; text-decoration: none; }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Temporary downtime</title>
+  <meta name="description" content="Temporary downtime notice">
+  <style>
+    :root {
+      --bg1: #0b1020;
+      --bg2: #121a2f;
+      --card: rgba(18, 24, 42, 0.88);
+      --text: #eef2ff;
+      --muted: #b7c0d8;
+      --line: rgba(255, 255, 255, 0.08);
+      --accent: #8fb4ff;
+      --accent-2: #c7d8ff;
+      --ok-bg: rgba(143, 180, 255, 0.08);
+      --success-bg: rgba(120, 220, 160, 0.1);
+      --success: #7cdca0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, #1a2750 0%, transparent 35%),
+        linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 720px;
+    }
+
+    .card {
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px 18px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .badge {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 7vw, 46px);
+      line-height: 1.05;
+    }
+
+    .lead {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
+
+    .info {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .box {
+      border: 1px solid var(--line);
+      background: var(--ok-bg);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .success {
+      border: 1px solid rgba(120, 220, 160, 0.25);
+      background: var(--success-bg);
+    }
+
+    .label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--accent-2);
+      margin-bottom: 6px;
+    }
+
+    .value {
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--text);
+    }
+
+    .success .value {
+      color: var(--success);
+      font-weight: 600;
+    }
+
+    .footer {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #97a3c4;
+    }
+
+    @media (min-width: 640px) {
+      .card {
+        padding: 32px;
+      }
+
+      .info {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <article>
-        <h1>Sorry, we're currently down.</h1>
-        <div><strong>The service is temporarily unavailable due to maintenance.</strong></div>
-        <div>We expect to be back by: <time datetime="2026-03-28T18:45:23Z">2026-03-28 18:45:23 UTC</time></div>
-        <div>If you need immediate assistance, please contact support.</div>
-    </article>
+  <div class="wrap">
+    <main class="card">
+      <div class="badge">Temporary downtime</div>
+
+      <h1>The app is temporarily offline</h1>
+
+      <p class="lead">
+        The app is hosted on my home server, and it went offline after my cat chewed through
+        the power cable for my router’s power supply.
+      </p>
+
+      <p class="lead">
+        As a result, the server is currently unreachable and the app is down for now.
+      </p>
+
+      <section class="info">
+        <div class="box">
+          <span class="label">Expected recovery</span>
+          <div class="value">31.03.2026</div>
+        </div>
+
+        <div class="box">
+          <span class="label">Status</span>
+          <div class="value">Temporary outage</div>
+        </div>
+
+        <div class="box success">
+          <span class="label">Cat status</span>
+          <div class="value">The cat is OK.</div>
+        </div>
+      </section>
+
+      <p class="footer">
+        Thanks for your patience.
+      </p>
+    </main>
+  </div>
 </body>
 </html>
