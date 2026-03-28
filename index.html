@@ -2,205 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Temporary downtime</title>
-  <meta name="description" content="Temporary downtime notice">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temporarily down</title>
 
   <style>
-    :root {
-      --bg1: #1a1333;
-      --bg2: #2d1f55;
-      --card: rgba(26, 18, 51, 0.9);
-      --text: #fff8f1;
-      --muted: #ddd2f5;
-      --line: rgba(255, 255, 255, 0.10);
-      --accent: #ffd166;
-      --good: #9be7a3;
-    }
-
-    * { box-sizing: border-box; }
-
     body {
       margin: 0;
-      min-height: 100vh;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top, #4a2e8a 0%, transparent 35%),
-        linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-    }
-
-    .wrap {
-      width: 100%;
-      max-width: 760px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 24px;
       padding: 20px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #fafafa;
+      color: #222;
+      text-align: center;
+      line-height: 1.6;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255, 209, 102, 0.15);
-      border: 1px solid rgba(255, 209, 102, 0.25);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 14px;
+    .container {
+      max-width: 520px;
+      margin: 0 auto;
     }
 
     h1 {
-      margin: 0 0 10px;
-      font-size: clamp(28px, 7vw, 48px);
-      line-height: 1.05;
+      font-size: 28px;
+      margin-bottom: 12px;
     }
 
-    .subtitle {
-      margin: 0 0 18px;
+    p {
+      margin: 10px 0;
       font-size: 16px;
-      line-height: 1.6;
-      color: var(--muted);
     }
 
-    /* CAT IMAGE BLOCK */
-    .cat-card {
-      margin: 18px 0;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      overflow: hidden;
-      background: rgba(0,0,0,0.25);
+    .cat {
+      margin: 24px 0;
     }
 
-    .cat-image-wrap {
+    .cat img {
       width: 100%;
-      aspect-ratio: 3 / 4; /* portrait */
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: auto;
+      max-height: 70vh;
+      object-fit: contain; /* full cat always visible */
+      border-radius: 12px;
     }
 
-    .cat-image-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* shows full cat */
-      padding: 10px;
-    }
-
-    .cat-caption {
-      padding: 12px 14px;
+    .caption {
       font-size: 14px;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-      text-align: center;
-    }
-
-    .grid {
-      display: grid;
-      gap: 12px;
-      margin-top: 10px;
+      color: #666;
+      margin-top: 8px;
     }
 
     .box {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 14px;
-      background: rgba(255,255,255,0.04);
-    }
-
-    .label {
-      display: block;
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 6px;
-    }
-
-    .value {
+      margin-top: 20px;
+      padding: 12px;
+      border-radius: 10px;
+      background: #f0f0f0;
       font-size: 15px;
-      line-height: 1.6;
     }
 
-    .ok {
-      color: var(--good);
-      font-weight: 700;
-    }
-
-    .footer {
-      margin-top: 18px;
-      font-size: 14px;
-      color: #c8bce6;
-      text-align: center;
-    }
-
-    @media (min-width: 700px) {
-      .card { padding: 30px; }
-      .grid { grid-template-columns: 1fr 1fr; }
+    strong {
+      font-weight: 600;
     }
   </style>
 </head>
-
 <body>
-  <div class="wrap">
-    <main class="card">
+  <div class="container">
 
-      <div class="badge">Temporary downtime</div>
+    <h1>The app is down</h1>
 
-      <h1>Service interrupted by a cat</h1>
+    <p>
+      It was running on my home server, but my cat chewed through
+      the router’s power cable.
+    </p>
 
-      <p class="subtitle">
-        The app is hosted on my home server. Unfortunately, my cat chewed through
-        the router’s power cable, so everything went offline.
-      </p>
-
-      <!-- CAT IMAGE -->
-      <div class="cat-card">
-        <div class="cat-image-wrap">
-          <img src="cat.jpg" alt="The cat responsible for this outage">
-        </div>
-        <div class="cat-caption">
-          Main suspect. No regrets.
-        </div>
+    <div class="cat">
+      <img src="cat.jpg" alt="The cat responsible">
+      <div class="caption">
+        The culprit. Zero regrets.
       </div>
+    </div>
 
-      <div class="grid">
-        <div class="box">
-          <span class="label">Expected recovery</span>
-          <div class="value">31.03.2026</div>
-        </div>
+    <p>
+      The cat is OK.
+    </p>
 
-        <div class="box">
-          <span class="label">Cat status</span>
-          <div class="value"><span class="ok">The cat is OK.</span> Only the cable suffered.</div>
-        </div>
+    <div class="box">
+      <p><strong>Expected back:</strong> 31.03.2026</p>
+      <p><strong>Status:</strong> temporary outage</p>
+    </div>
 
-        <div class="box">
-          <span class="label">Current status</span>
-          <div class="value">Temporary outage</div>
-        </div>
+    <p>
+      I’ll fix it once I’m back home and can replace the power supply.
+    </p>
 
-        <div class="box">
-          <span class="label">Plan</span>
-          <div class="value">Replace PSU and restore service once back home</div>
-        </div>
-      </div>
-
-      <div class="footer">
-        Thanks for your patience.
-      </div>
-
-    </main>
   </div>
 </body>
 </html>
